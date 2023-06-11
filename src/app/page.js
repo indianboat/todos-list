@@ -9,7 +9,7 @@ export default function Home() {
 
   const handleGoogleSignin = async () => {
     signIn("google", {
-      callbackUrl: "http://localhost:3000",
+      callbackUrl: "https://todos-list-jet.vercel.app/",
     });
   }
 
