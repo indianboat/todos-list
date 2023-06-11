@@ -1,9 +1,14 @@
 import React from "react";
-import { getAllTodos } from "../../../lib/todoscollection";
 import AddTodo from "../components/AddTodo";
+import { getAllTodos } from "../../../lib/todoscollection";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+
 
 const Todos = async () => {
-  const { todos } = await getAllTodos();
+
+  const session = await getServerSession(authOptions);
+  const { todos } = await getAllTodos(session?.user.email);
 
   return (
     <>
@@ -13,15 +18,18 @@ const Todos = async () => {
         <AddTodo />
 
         <div className="my-6 gap-y-3 flex flex-col">
-          {
-            todos?.map((todo) => {
+          {todos
+            ?.map((todo) => {
               return (
-                <h2 key={todo._id} className="p-2 hover:bg-yellow-100 text-sm text-yellow-600 rounded-xl">
+                <h2
+                  key={todo._id}
+                  className="p-2 hover:bg-yellow-100 text-sm text-yellow-600 rounded-xl"
+                >
                   {todo.desc}
                 </h2>
-              )
-            }).reverse()
-          }
+              );
+            })
+            .reverse()}
         </div>
       </div>
     </>

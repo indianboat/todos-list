@@ -2,11 +2,12 @@
 
 import React, {useRef} from "react";
 import { create } from '../_actions';
-
+import { useSession } from "next-auth/react";
 
 const AddTodo = () => {
 
-  const formRef = useRef()
+  const formRef = useRef();
+  const {data:session} = useSession();
 
   async function action(formData){
     await create(formData);
@@ -22,6 +23,12 @@ const AddTodo = () => {
             type="text"
             name="task"
             placeholder="enter a task"
+          />
+          <input
+            type="email"
+            name="email"
+            defaultValue={session?.user.email}
+            hidden
           />
           <button
             className="py-2 px-5 rounded-full shadow-md bg-rose-600 text-rose-100"
