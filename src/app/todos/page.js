@@ -19,7 +19,7 @@ const Todos = async () => {
   return (
     <>
       <div className="my-6 p-5 shadow rounded-md md:w-[520px] sm:w-[480px] w-full mx-auto ">
-        <p className="mb-4 text-xl drop-shadow">Todos</p>
+        <p className="mb-4 text-xl drop-shadow md:text-left sm:text-left text-center">Your Todos</p>
         <AddTodo />
         <ShowTodo todos={todos} />
       </div>
