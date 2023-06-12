@@ -6,14 +6,13 @@ import { updateTask } from "./UpdateTodo";
 
 const ShowTodo = ({ todos }) => {
 
-
   return (
     <>
       <div className="my-6 gap-y-3 flex flex-col">
         {todos
           ?.map((todo) => {
             return (
-              <div className="rounded-xl border border-gray-200 shadow p-2" key={todo._id}>
+              <div className="rounded-xl border dark:border-0 bg-white dark:bg-gray-900 border-gray-200 shadow p-2" key={todo._id}>
                 <div
                   className={`p-2 ${
                     todo?.isCompleted
@@ -21,7 +20,7 @@ const ShowTodo = ({ todos }) => {
                       : "bg-yellow-100"
                   } text-sm ${
                     todo?.isCompleted ? "text-green-600" : "text-yellow-600"
-                  } rounded-xl flex justify-between place-items-center`}
+                  } rounded-lg flex justify-between place-items-center`}
                 >
                   <h2 className="text-justify p-2 pr-3">{todo.desc}</h2>
 
@@ -44,7 +43,10 @@ const ShowTodo = ({ todos }) => {
                     )}
                   </div>
                 </div>
-                <span className="text-xs px-2 text-gray-400">{todo?.createdAt.toDateString()} {todo?.createdAt.toLocaleTimeString().toLowerCase()}</span>
+                <div className="flex justify-between mt-2">
+                <span className="text-xs px-2 text-gray-400 italic">{todo?.createdAt.toDateString()} {todo?.createdAt.toLocaleTimeString().toLowerCase()}</span>
+                <span className="text-xs px-2 py-1 rounded-xl text-gray-700 italic bg-slate-100 dark:bg-slate-200 ">office work</span>
+                </div>
               </div>
             );
           })

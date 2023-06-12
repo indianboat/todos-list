@@ -23,11 +23,11 @@ export default function Home() {
             <p>Welcome {session?.user.name}</p>
             <p>Logged in as <span className="text-gray-500">{session?.user.email}</span></p>
             </div>
-            <button className="mt-8 px-4 py-1 bg-slate-200 rounded-md" type="button" onClick={()=> signOut()}>Logout</button>
+            <button className="mt-8 px-4 py-1 bg-slate-200 dark:bg-slate-700 rounded-md" type="button" onClick={()=> signOut()}>Logout</button>
           </>: 
           
           <>
-            <button className="mt-8 px-8 py-1 bg-slate-50 rounded-md" type="button" onClick={handleGoogleSignin}>Sign in with GOOGLE</button>
+            <button className="mt-8 px-8 py-1 bg-slate-200 dark:bg-slate-700 rounded-md" type="button" onClick={handleGoogleSignin}>Sign in with GOOGLE</button>
           </>
         }
         
