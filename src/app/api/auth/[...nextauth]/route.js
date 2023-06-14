@@ -1,6 +1,5 @@
 import NextAuth from "next-auth/next";
-import GoogleProvider from "next-auth/providers/google"
-
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   providers:[
@@ -9,9 +8,6 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     })
   ],
-  theme: {
-    colorScheme: "light",
-  },
   secret: process.env.NEXTAUTH_SECRET,
 }
 
