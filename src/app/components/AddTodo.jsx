@@ -18,7 +18,7 @@ const AddTodo = () => {
       <form ref={formRef} action={action}>
         <div className="flex md:flex-row sm:flex-row flex-col md:gap-x-4 sm:gap-x-4 gap-y-4">
           <textarea
-            className="shadow-md w-full py-2 px-5 outline-none rounded-md"
+            className="shadow-md w-full py-2 px-5 outline-none rounded-md dark:bg-slate-900"
             rows={4}
             name="task"
             placeholder="Enter a task"
@@ -33,7 +33,7 @@ const AddTodo = () => {
         </div>
         <div className="flex justify-end">
           <button
-            className="py-2 mt-4 px-5 md:w-fit sm:w-full w-full rounded-full shadow-md bg-rose-600 text-rose-100"
+            className="py-2 mt-4 px-5 md:w-fit sm:w-full w-full rounded-full shadow transition-transform active:scale-90 bg-rose-600 text-rose-100 hover:shadow-md"
             type="submit"
           >
             create
