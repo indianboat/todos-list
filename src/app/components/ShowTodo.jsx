@@ -144,11 +144,11 @@ const ShowTodo = ({ todos }) => {
                       {todo?.createdAt.toLocaleTimeString().toLowerCase()}
                     </span>
                     {todo?.isCompleted === true ? (
-                      <span className="text-xs px-2 py-1 rounded-xl text-green-700 italic bg-green-100 dark:bg-green-200 ">
+                      <span className="text-xs px-2 py-1 rounded-xl text-green-700 dark:text-green-400 italic bg-green-200 dark:bg-green-900">
                         Done
                       </span>
                     ) : (
-                      <span className="text-xs px-2 py-1 rounded-xl text-gray-700 italic bg-slate-100 dark:bg-slate-200 ">
+                      <span className="text-xs px-2 py-1 rounded-xl text-yellow-700 dark:text-yellow-400 italic bg-yellow-100 dark:bg-yellow-900">
                         Pending
                       </span>
                     )}
