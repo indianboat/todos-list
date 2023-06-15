@@ -66,9 +66,11 @@ const ShowTodo = ({ todos }) => {
         </div>
         
         {
-          sortingOrder === "lo"
-            ? filteredData?.map((todo) => { return ( <ShowOneTodo todo={todo} key={todo._id} /> )}).reverse()
-            : filteredData?.map((todo) => { return ( <ShowOneTodo todo={todo} key={todo._id} /> )})
+          todos.length <= 0 ? <div className="p-2 rounded-lg bg-slate-400 text-slate-900 dark:bg-slate-900 dark:text-slate-400 flex justify-center">No task for now</div> : (
+            sortingOrder === "lo"
+          ? filteredData?.map((todo) => { return ( <ShowOneTodo todo={todo} key={todo._id} /> )}).reverse()
+          : filteredData?.map((todo) => { return ( <ShowOneTodo todo={todo} key={todo._id} /> )})
+          )
         }
       </div>
 

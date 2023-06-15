@@ -3,6 +3,7 @@ import { deleteTask } from "./DeleteTodo";
 import { updateTask } from "./UpdateTodo";
 
 const ShowOneTodo = ({ todo }) => {
+
   return (
     <>
       <div
